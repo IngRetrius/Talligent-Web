@@ -1,0 +1,246 @@
+/* Portfolio Hero */
+.portfolio-hero {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 120px 0 var(--spacing-2xl);
+    text-align: center;
+}
+
+.portfolio-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: var(--font-size-4xl);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.page-subtitle {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Portfolio Filter */
+.portfolio-filter {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+    position: sticky;
+    top: 80px;
+    z-index: var(--z-index-sticky);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.filter-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: transparent;
+    color: var(--color-text);
+    border-radius: var(--border-radius-full);
+    font-weight: 500;
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    color: var(--color-dark);
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Portfolio Projects */
+.portfolio-projects {
+    background-color: var(--color-secondary);
+    padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+}
+
+/* Portfolio CTA */
+.portfolio-cta {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-3xl) 0;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-content p {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-xl);
+}
+
+.cta-content .btn {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.cta-content .btn:hover {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+/* Hide projects that don't match the filter */
+.project-item {
+    animation: fadeIn 0.5s ease;
+}
+
+.project-item.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .portfolio-hero {
+        padding: 100px 0 var(--spacing-xl);
+    }
+    
+    .page-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .filter-categories {
+        overflow-x: auto;
+        padding-bottom: var(--spacing-sm);
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 575px) {
+    .portfolio-hero {
+        padding: 90px 0 var(--spacing-lg);
+    }
+    
+    .page-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .page-subtitle {
+        font-size: var(--font-size-md);
+    }
+    
+    .cta-content h2 {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Project Card Summary and Details */
+.project-summary {
+    padding: var(--spacing-xl);
+    transition: var(--transition-normal);
+}
+
+.project-short-desc {
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.btn-view-details {
+    color: var(--color-primary);
+    background: none;
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.btn-view-details:hover {
+    color: var(--color-dark);
+}
+
+.btn-view-details i {
+    transition: var(--transition-normal);
+}
+
+.btn-view-details.active i {
+    transform: rotate(180deg);
+}
+
+.project-details-container {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    border-top: 1px solid var(--color-secondary);
+}
+
+.project-card.expanded .project-summary {
+    background-color: var(--color-secondary);
+}
+
+.project-card.expanded .project-details-container {
+    height: auto;
+}
+
+.project-item {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Adjustments for expanded projects */
+.project-content {
+    padding: var(--spacing-xl);
+}
+
+.project-image {
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 991px) {
+    .project-summary {
+        padding: var(--spacing-lg);
+    }
+    
+    .project-content {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 575px) {
+    .project-summary {
+        padding: var(--spacing-md);
+    }
+    
+    .project-content {
+        padding: var(--spacing-md);
+    }
+}

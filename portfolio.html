@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Taligent</title>
+    <meta name="description" content="Conoce los proyectos desarrollados por Taligent, soluciones innovadoras que transforman la gestión de procesos a través del software.">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/utils/animations.css">
+    <link rel="stylesheet" href="css/utils/responsive.css">
+    <link rel="stylesheet" href="css/pages/portfolio.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="Taligent Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html#services" class="nav-link">Servicios</a></li>
+                        <li class="nav-item"><a href="index.html#about" class="nav-link">Nosotros</a></li>
+                        <li class="nav-item"><a href="index.html#methodology" class="nav-link">Metodología</a></li>
+                        <li class="nav-item"><a href="portfolio.html" class="nav-link active">Portafolio</a></li>
+                        <li class="nav-item"><a href="index.html#contact" class="nav-link contact-btn">Contáctenos</a></li>
+                    </ul>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="portfolio-hero-content">
+                <h1 class="page-title">Nuestro Portafolio</h1>
+                <p class="page-subtitle">Colaboramos con empresas innovadoras en cada etapa, actuando como un socio mientras aceleran y alcanzan sus objetivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="portfolio-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-categories">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="healthtech">HealthTech</button>
+                    <button class="filter-btn" data-category="labsystems">Sistemas de Laboratorio</button>
+                    <button class="filter-btn" data-category="turnsystems">Gestión de Turnos</button>
+                    <button class="filter-btn" data-category="scheduling">Agendamiento</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Projects -->
+    <section class="portfolio-projects">
+        <div class="container">
+            <div class="projects-grid" id="projectsGrid">
+                <!-- HealthQueue Project -->
+                <div class="project-item" data-category="healthtech turnsystems" id="healthqueue">
+                    <div class="project-card">
+                        <!-- Project Summary (always visible) -->
+                        <div class="project-summary">
+                            <h2 class="project-title">HealthQueue</h2>
+                            <p class="project-category">Sistema de Gestión de Citas Médicas</p>
+                            <p class="project-short-desc">Plataforma digital que optimiza la gestión de citas médicas y reduce los tiempos de espera en centros de salud.</p>
+                            <button class="btn-view-details">Ver Detalles <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <!-- Project Details (initially hidden) -->
+                        <div class="project-details-container">
+                            <div class="project-content">
+                                <div class="project-image">
+                                    <img src="assets/images/projects/healthqueue.jpg" alt="HealthQueue - Sistema de Gestión de Citas Médicas">
+                                </div>
+                                <div class="project-details">
+                                    <div class="project-info">
+                                        <div class="info-item">
+                                            <h3>Cliente</h3>
+                                            <p>Centro Médico Especializado</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Industria</h3>
+                                            <p>HealthTech</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Servicios</h3>
+                                            <p>Desarrollo a Medida, UX/UI Design, Integración de Sistemas</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Duración</h3>
+                                            <p>10 meses</p>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <h3>Descripción del Proyecto</h3>
+                                        <p>HealthQueue es un sistema integral para la gestión de citas médicas, diseñado específicamente para reducir los tiempos de espera y optimizar la asignación de recursos en centros de salud.</p>
+                                        <p>El sistema permite a los pacientes programar, modificar y cancelar citas a través de una plataforma web y móvil, integrándose con el sistema de historias clínicas electrónicas para una experiencia fluida.</p>
+                                        <h3>Características principales</h3>
+                                        <ul class="features-list">
+                                            <li>Interfaz de reserva de citas multicanal (web, móvil, telefónica)</li>
+                                            <li>Sistema inteligente de gestión de salas de espera</li>
+                                            <li>Recordatorios automáticos vía SMS y correo electrónico</li>
+                                            <li>Panel administrativo para gestión de recursos médicos</li>
+                                            <li>Integración con historia clínica electrónica</li>
+                                            <li>Análisis predictivo de ausentismo de pacientes</li>
+                                        </ul>
+                                        <h3>Tecnologías utilizadas</h3>
+                                        <div class="technologies">
+                                            <span class="tech-badge">React</span>
+                                            <span class="tech-badge">Node.js</span>
+                                            <span class="tech-badge">PostgreSQL</span>
+                                            <span class="tech-badge">Express</span>
+                                            <span class="tech-badge">Twilio API</span>
+                                            <span class="tech-badge">Docker</span>
+                                        </div>
+                                        <h3>Resultados</h3>
+                                        <p>La implementación de HealthQueue permitió reducir en un 35% los tiempos de espera, incrementar en un 20% la tasa de asistencia a citas y optimizar en un 15% la utilización de consultorios, mejorando significativamente la satisfacción de pacientes y profesionales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LabTrack Project -->
+                <div class="project-item" data-category="labsystems healthtech" id="labtrack">
+                    <div class="project-card">
+                        <!-- Project Summary (always visible) -->
+                        <div class="project-summary">
+                            <h2 class="project-title">LabTrack</h2>
+                            <p class="project-category">Sistema de Seguimiento de Muestras para Laboratorios</p>
+                            <p class="project-short-desc">Solución integral para la trazabilidad y gestión del ciclo completo de procesamiento de muestras en laboratorios clínicos.</p>
+                            <button class="btn-view-details">Ver Detalles <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <!-- Project Details (initially hidden) -->
+                        <div class="project-details-container">
+                            <div class="project-content">
+                                <div class="project-image">
+                                    <img src="assets/images/projects/labtrack.jpg" alt="LabTrack - Sistema de Seguimiento de Muestras">
+                                </div>
+                                <div class="project-details">
+                                    <div class="project-info">
+                                        <div class="info-item">
+                                            <h3>Cliente</h3>
+                                            <p>Red Nacional de Laboratorios</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Industria</h3>
+                                            <p>HealthTech / Laboratorios</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Servicios</h3>
+                                            <p>Desarrollo de Software, Integración IoT, Sistemas de Trazabilidad</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Duración</h3>
+                                            <p>14 meses</p>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <h3>Descripción del Proyecto</h3>
+                                        <p>LabTrack es un sistema completo para el seguimiento y control de muestras biológicas en laboratorios clínicos, desde la toma de la muestra hasta la entrega de resultados.</p>
+                                        <p>La solución integra tecnología de código de barras y RFID para identificar y rastrear las muestras en tiempo real, asegurando la cadena de custodia y optimizando los procesos de análisis.</p>
+                                        <h3>Características principales</h3>
+                                        <ul class="features-list">
+                                            <li>Trazabilidad completa con tecnología de código de barras y RFID</li>
+                                            <li>Panel de control en tiempo real del estado de las muestras</li>
+                                            <li>Alertas automáticas sobre muestras críticas o problemas de procesamiento</li>
+                                            <li>Integración con equipos de análisis de laboratorio</li>
+                                            <li>Sistema de notificación a pacientes sobre disponibilidad de resultados</li>
+                                            <li>Reportes analíticos de eficiencia y tiempos de procesamiento</li>
+                                        </ul>
+                                        <h3>Tecnologías utilizadas</h3>
+                                        <div class="technologies">
+                                            <span class="tech-badge">Angular</span>
+                                            <span class="tech-badge">Java Spring Boot</span>
+                                            <span class="tech-badge">MySQL</span>
+                                            <span class="tech-badge">RFID</span>
+                                            <span class="tech-badge">RabbitMQ</span>
+                                            <span class="tech-badge">Kubernetes</span>
+                                        </div>
+                                        <h3>Resultados</h3>
+                                        <p>LabTrack ha permitido reducir los errores de identificación de muestras en un 98%, disminuir en un 35% el tiempo de procesamiento y mejorar en un 40% la trazabilidad de las muestras, resultando en un incremento significativo en la capacidad operativa de los laboratorios.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MediSchedule Project -->
+                <div class="project-item" data-category="scheduling turnsystems" id="medischedule">
+                    <div class="project-card">
+                        <!-- Project Summary (always visible) -->
+                        <div class="project-summary">
+                            <h2 class="project-title">MediSchedule</h2>
+                            <p class="project-category">Plataforma de Programación para Centros Médicos</p>
+                            <p class="project-short-desc">Sistema inteligente de agendamiento que optimiza la asignación de recursos médicos y mejora la experiencia de usuarios.</p>
+                            <button class="btn-view-details">Ver Detalles <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <!-- Project Details (initially hidden) -->
+                        <div class="project-details-container">
+                            <div class="project-content">
+                                <div class="project-image">
+                                    <img src="assets/images/projects/medischedule.jpg" alt="MediSchedule - Plataforma de Programación">
+                                </div>
+                                <div class="project-details">
+                                    <div class="project-info">
+                                        <div class="info-item">
+                                            <h3>Cliente</h3>
+                                            <p>Grupo Hospitalario Regional</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Industria</h3>
+                                            <p>HealthTech</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Servicios</h3>
+                                            <p>Desarrollo Full-Stack, UX/UI Design, Algoritmos de Optimización</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Duración</h3>
+                                            <p>12 meses</p>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <h3>Descripción del Proyecto</h3>
+                                        <p>MediSchedule es una plataforma avanzada de programación diseñada específicamente para centros médicos de gran escala, que optimiza la asignación de recursos (médicos, salas, equipos) según demanda y prioridad clínica.</p>
+                                        <p>El sistema incorpora algoritmos de machine learning para predecir patrones de demanda y sugerir la distribución óptima de recursos, reduciendo tiempos de espera y maximizando la capacidad operativa del centro.</p>
+                                        <h3>Características principales</h3>
+                                        <ul class="features-list">
+                                            <li>Motor de optimización de agendas basado en IA</li>
+                                            <li>Programación multirecurso (profesionales, salas, equipos)</li>
+                                            <li>Sistema de priorización clínica para casos urgentes</li>
+                                            <li>Portal para pacientes con autogestión de citas</li>
+                                            <li>Panel de gestión para administradores de centro</li>
+                                            <li>Integración con sistemas de historia clínica electrónica</li>
+                                        </ul>
+                                        <h3>Tecnologías utilizadas</h3>
+                                        <div class="technologies">
+                                            <span class="tech-badge">Vue.js</span>
+                                            <span class="tech-badge">Python</span>
+                                            <span class="tech-badge">Django</span>
+                                            <span class="tech-badge">PostgreSQL</span>
+                                            <span class="tech-badge">TensorFlow</span>
+                                            <span class="tech-badge">Redis</span>
+                                        </div>
+                                        <h3>Resultados</h3>
+                                        <p>La implementación de MediSchedule ha permitido aumentar la capacidad de atención en un 27%, reducir los tiempos de espera para citas en un 42% y mejorar en un 35% la utilización efectiva de los recursos médicos, con un retorno de inversión estimado en menos de 8 meses.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PatientFlow Project -->
+                <div class="project-item" data-category="turnsystems healthtech" id="patientflow">
+                    <div class="project-card">
+                        <!-- Project Summary (always visible) -->
+                        <div class="project-summary">
+                            <h2 class="project-title">PatientFlow</h2>
+                            <p class="project-category">Sistema de Optimización de Flujo de Pacientes</p>
+                            <p class="project-short-desc">Solución integral para gestionar y optimizar el recorrido de pacientes en instituciones de salud, reduciendo tiempos de espera.</p>
+                            <button class="btn-view-details">Ver Detalles <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <!-- Project Details (initially hidden) -->
+                        <div class="project-details-container">
+                            <div class="project-content">
+                                <div class="project-image">
+                                    <img src="assets/images/projects/patientflow.jpg" alt="PatientFlow - Optimización de Flujo de Pacientes">
+                                </div>
+                                <div class="project-details">
+                                    <div class="project-info">
+                                        <div class="info-item">
+                                            <h3>Cliente</h3>
+                                            <p>Hospital Universitario</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Industria</h3>
+                                            <p>HealthTech</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Servicios</h3>
+                                            <p>Desarrollo de Software, Análisis de Procesos, IoT</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Duración</h3>
+                                            <p>11 meses</p>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <h3>Descripción del Proyecto</h3>
+                                        <p>PatientFlow es un sistema completo para la gestión y optimización del recorrido de pacientes en instituciones sanitarias, abarcando desde su ingreso hasta el alta médica.</p>
+                                        <p>La solución combina tecnología de localización en tiempo real, análisis avanzado de datos y visualización de procesos para identificar cuellos de botella y optimizar flujos de trabajo clínicos.</p>
+                                        <h3>Características principales</h3>
+                                        <ul class="features-list">
+                                            <li>Seguimiento de pacientes en tiempo real mediante beacons Bluetooth</li>
+                                            <li>Visualización dinámica de áreas congestionadas</li>
+                                            <li>Sistema de llamado electrónico a pacientes</li>
+                                            <li>Análisis predictivo de tiempos de espera</li>
+                                            <li>Dashboard de indicadores clave de rendimiento</li>
+                                            <li>Integración con sistemas de información hospitalaria</li>
+                                        </ul>
+                                        <h3>Tecnologías utilizadas</h3>
+                                        <div class="technologies">
+                                            <span class="tech-badge">React</span>
+                                            <span class="tech-badge">Node.js</span>
+                                            <span class="tech-badge">MongoDB</span>
+                                            <span class="tech-badge">Bluetooth Low Energy</span>
+                                            <span class="tech-badge">Socket.io</span>
+                                            <span class="tech-badge">D3.js</span>
+                                        </div>
+                                        <h3>Resultados</h3>
+                                        <p>PatientFlow ha permitido reducir los tiempos de espera en un 45%, aumentar la satisfacción de pacientes en un 62% y optimizar el uso de recursos hospitalarios en un 30%, contribuyendo a una mejora significativa en la calidad asistencial y eficiencia operativa.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DocAgenda Project -->
+                <div class="project-item" data-category="scheduling healthtech" id="docagenda">
+                    <div class="project-card">
+                        <!-- Project Summary (always visible) -->
+                        <div class="project-summary">
+                            <h2 class="project-title">DocAgenda</h2>
+                            <p class="project-category">Sistema de Agendamiento para Consultorios Médicos</p>
+                            <p class="project-short-desc">Plataforma especializada para la gestión de agendas médicas y turnos en consultorios particulares y pequeñas clínicas.</p>
+                            <button class="btn-view-details">Ver Detalles <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        
+                        <!-- Project Details (initially hidden) -->
+                        <div class="project-details-container">
+                            <div class="project-content">
+                                <div class="project-image">
+                                    <img src="assets/images/projects/docagenda.jpg" alt="DocAgenda - Sistema de Agendamiento">
+                                </div>
+                                <div class="project-details">
+                                    <div class="project-info">
+                                        <div class="info-item">
+                                            <h3>Cliente</h3>
+                                            <p>Asociación de Especialistas Médicos</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Industria</h3>
+                                            <p>HealthTech</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Servicios</h3>
+                                            <p>Desarrollo SaaS, Diseño UX/UI, Integración de Pagos</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <h3>Duración</h3>
+                                            <p>9 meses</p>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <h3>Descripción del Proyecto</h3>
+                                        <p>DocAgenda es una solución SaaS diseñada específicamente para consultorios médicos independientes y pequeñas clínicas, permitiendo una gestión eficiente de agendas médicas y reserva de turnos.</p>
+                                        <p>El sistema ofrece una plataforma intuitiva tanto para profesionales como para pacientes, facilitando la reserva online 24/7, gestión de copagos y seguimiento de historiales de consultas.</p>
+                                        <h3>Características principales</h3>
+                                        <ul class="features-list">
+                                            <li>Portal web y móvil para reserva de citas</li>
+                                            <li>Gestión personalizable de agendas por profesional</li>
+                                            <li>Sistema de recordatorios automáticos multicanal</li>
+                                            <li>Integración con pasarelas de pago</li>
+                                            <li>Portal de autogestión para pacientes</li>
+                                            <li>Reportes estadísticos para gestión de consultorios</li>
+                                        </ul>
+                                        <h3>Tecnologías utilizadas</h3>
+                                        <div class="technologies">
+                                            <span class="tech-badge">Next.js</span>
+                                            <span class="tech-badge">Firebase</span>
+                                            <span class="tech-badge">Cloud Functions</span>
+                                            <span class="tech-badge">Stripe</span>
+                                            <span class="tech-badge">React Native</span>
+                                            <span class="tech-badge">Twilio</span>
+                                        </div>
+                                        <h3>Resultados</h3>
+                                        <p>DocAgenda ha sido adoptado por más de 500 consultorios, reduciendo en un 70% las tareas administrativas relacionadas con la gestión de citas, incrementando en un 25% la tasa de ocupación de consultas y mejorando en un 55% la satisfacción de los pacientes con el proceso de reserva.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="portfolio-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para transformar tu negocio?</h2>
+                <p>Comencemos a trabajar en tu próximo proyecto. Nuestro equipo está listo para convertir tus ideas en soluciones tecnológicas innovadoras.</p>
+                <a href="index.html#contact" class="btn btn-primary">Contáctenos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="Taligent Logo">
+                    <p class="footer-tagline">Transformando la gestión de procesos a través del software</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3 class="footer-title">Navegación</h3>
+                        <ul class="footer-menu">
+                            <li><a href="index.html#services">Servicios</a></li>
+                            <li><a href="index.html#about">Nosotros</a></li>
+                            <li><a href="index.html#methodology">Metodología</a></li>
+                            <li><a href="portfolio.html">Portafolio</a></li>
+                            <li><a href="index.html#contact">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Servicios</h3>
+                        <ul class="footer-menu">
+                            <li><a href="index.html#services">Desarrollo a Medida</a></li>
+                            <li><a href="index.html#services">Aplicaciones Web y Móviles</a></li>
+                            <li><a href="index.html#services">Sistemas de Gestión</a></li>
+                            <li><a href="index.html#services">Integración de Sistemas</a></li>
+                            <li><a href="index.html#services">Análisis de Datos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Legal</h3>
+                        <ul class="footer-menu">
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                            <li><a href="#">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Taligent S.A.S. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#header" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/animations.js"></script>
+    <script src="js/modules/navigation.js"></script>
+    <script src="js/modules/portfolio.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
