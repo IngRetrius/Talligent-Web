@@ -43,7 +43,8 @@
     color: var(--color-primary);
 }
 
-.contact-btn {
+/* Actualización para el botón de contacto en el header */
+.nav-link.contact-btn {
     color: var(--color-white);
     background-color: var(--color-primary);
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -52,14 +53,34 @@
     transition: var(--transition-normal);
 }
 
-.contact-btn:hover {
+.nav-link.contact-btn:hover,
+.nav-link.contact-btn.active {
     background-color: var(--color-dark);
-    color: var(--color-white);
+    color: var(--color-white) !important; /* Asegura que el texto siempre sea blanco */
     transform: translateY(-3px);
 }
 
-.contact-btn:hover::after {
+/* Eliminar subrayado del botón de contacto */
+.nav-link.contact-btn::after,
+.nav-link.contact-btn:hover::after,
+.nav-link.contact-btn.active::after {
     display: none;
+}
+
+/* Efecto de brillo al pasar el cursor */
+.nav-link.contact-btn:hover {
+    box-shadow: 0 6px 15px rgba(15, 111, 239, 0.4);
+}
+
+/* Añadir animación sutil */
+@keyframes buttonPulse {
+    0% { box-shadow: 0 4px 10px rgba(15, 111, 239, 0.3); }
+    50% { box-shadow: 0 6px 15px rgba(15, 111, 239, 0.5); }
+    100% { box-shadow: 0 4px 10px rgba(15, 111, 239, 0.3); }
+}
+
+.nav-link.contact-btn.active {
+    animation: buttonPulse 2s infinite;
 }
 
 /* Responsive styles */

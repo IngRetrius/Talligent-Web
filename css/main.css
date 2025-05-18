@@ -222,3 +222,83 @@ label {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
+/* Base styles for body when modal is open */
+body.modal-open {
+    overflow: hidden;
+    padding-right: 15px; /* Prevent layout shift when scrollbar disappears */
+}
+/* Mejoras adicionales */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #0f6fef, #64a5ff);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.section-header:hover .section-title::after {
+    width: 100px;
+}
+
+/* Efectos de desplazamiento */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mejorar aspecto general de la página */
+body {
+    background-color: var(--color-secondary);
+    overflow-x: hidden;
+}
+
+.back-to-top {
+    box-shadow: 0 5px 15px rgba(15, 111, 239, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.back-to-top:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(15, 111, 239, 0.4);
+}
+
+/* Mejora de enlaces */
+a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+a:not(.btn):not(.nav-link):not(.social-link):not(.project-link):not(.back-to-top)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+a:not(.btn):not(.nav-link):not(.social-link):not(.project-link):not(.back-to-top):hover::after {
+    width: 100%;
+}
