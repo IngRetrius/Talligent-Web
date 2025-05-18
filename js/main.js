@@ -1,3 +1,4 @@
+// Archivo: js/main.js (COMPLETO)
 /**
  * Main JavaScript file for Taligent website
  * Initializes all modules and components
@@ -20,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize animations
     initAnimations();
+    
+    // Initialize hero video
+    initHeroVideo();
     
     // Initialize scroll handlers
     initScrollHandlers();
@@ -179,68 +183,103 @@ function debounce(func, delay) {
         timeout = setTimeout(() => func.apply(context, args), delay);
     };
 }
+
 /**
- * Controla la reproducción del video de héroe en loop con reversa
+ * Inicializa y controla el video de la sección Hero
  */
 function initHeroVideo() {
     const video = document.getElementById('heroVideo');
-    if (!video) return;
-    
-    let isForward = true;
-    
-    // Cuando el video llegue al final
-    video.addEventListener('ended', function() {
-        if (isForward) {
-            // Invertir dirección (hacia atrás)
-            this.currentTime = this.duration;
-            this.play();
-            isForward = false;
-        } else {
-            // Volver a dirección normal (hacia adelante)
-            this.currentTime = 0;
-            this.play();
-            isForward = true;
-        }
-    });
-    
-    // Control para reproducción inversa
-    video.addEventListener('timeupdate', function() {
-        if (!isForward && this.currentTime <= 0.1) {
-            // Si está llegando al inicio en modo inverso, volver a dirección normal
-            this.pause();
-            this.currentTime = 0;
-            this.play();
-            isForward = true;
-        }
-    });
-    
-    // Manejo manual de reversa (compatible con más navegadores)
-    function reversePlayback() {
-        if (!isForward) {
-            if (video.currentTime <= 0.1) {
-                // Llegamos al inicio, cambiar a reproducción normal
-                video.currentTime = 0;
-                video.play();
-                isForward = true;
-            } else {
-                // Seguir reproduciendo hacia atrás
-                video.currentTime -= 0.05; // Ajusta la velocidad cambiando este valor
-                requestAnimationFrame(reversePlayback);
-            }
-        }
+    if (!video) {
+        console.warn('Elemento de video no encontrado con ID "heroVideo"');
+        return;
     }
     
-    // Cuando el video termine, iniciar reproducción inversa
-    video.addEventListener('ended', function() {
-        if (isForward) {
-            isForward = false;
-            video.pause();
-            requestAnimationFrame(reversePlayback);
-        }
+    // Asegurar que el video se reproduce correctamente
+    video.addEventListener('loadeddata', function() {
+        // Intentar reproducir el video (algunos navegadores pueden bloquear el autoplay)
+        video.play().catch(err => {
+            console.warn('Reproducción automática bloqueada:', err);
+            
+            // Alternativa: mostrar un botón para reproducir manualmente
+            if (err.name === 'NotAllowedError') {
+                createPlayButton(video);
+            }
+        });
     });
+    
+    // Manejar errores de carga del video
+    video.addEventListener('error', function(e) {
+        console.error('Error en la reproducción del video:', e);
+        // Fallback a una imagen estática si el video falla
+        handleVideoError();
+    });
+    
+    // Optimizar rendimiento en dispositivos móviles
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        // En móviles, usar una resolución más baja o una tasa de fotogramas menor
+        video.setAttribute('playbackRate', '0.8');
+    }
 }
 
-// Asegúrate de llamar a esta función al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-    initHeroVideo();
-});
+/**
+ * Crea un botón para iniciar manualmente el video
+ * (solución para navegadores que bloquean autoplay)
+ */
+function createPlayButton(video) {
+    const heroSection = document.getElementById('hero');
+    if (!heroSection) return;
+    
+    const playButton = document.createElement('button');
+    playButton.className = 'hero-play-button';
+    playButton.innerHTML = '<i class="fas fa-play"></i>';
+    playButton.setAttribute('aria-label', 'Reproducir video de fondo');
+    
+    playButton.addEventListener('click', function() {
+        video.play();
+        this.remove();
+    });
+    
+    // Estilos inline para el botón
+    playButton.style.cssText = `
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(15, 111, 239, 0.8);
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    `;
+    
+    heroSection.appendChild(playButton);
+}
+
+/**
+ * Maneja errores en la reproducción del video
+ * Cambia a una imagen estática como fallback
+ */
+function handleVideoError() {
+    const videoContainer = document.querySelector('.hero-video-container');
+    if (!videoContainer) return;
+    
+    // Quitar el video
+    videoContainer.innerHTML = '';
+    
+    // Aplicar una imagen de fondo como fallback
+    videoContainer.style.cssText = `
+        background-image: url('assets/images/hero-bg-static.jpg');
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(8, 66, 141, 0.6);
+        background-blend-mode: overlay;
+    `;
+}

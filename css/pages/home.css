@@ -1,3 +1,5 @@
+/* Archivo: css/pages/home.css (COMPLETO) */
+
 /* Hero Section con Video de Fondo */
 .hero {
     position: relative;
@@ -28,56 +30,140 @@
     position: absolute;
     top: 0;
     left: 0;
-    filter: brightness(1) contrast(1) saturate(0.1); /* Filtro aplicado directamente al video */
-    background-color: rgba(8, 66, 141, 0.6); /* Color de respaldo */
+    filter: brightness(0.6) contrast(1.1) grayscale(0.3); /* Filtro más oscuro y grisáceo */
+    background-color: rgba(8, 66, 141, 0.3); /* Color de respaldo */
 }
 
-/* Contenido del Hero */
+/* Ajuste para mover el contenido hacia la izquierda */
 .hero-content {
     position: relative;
-    z-index: 2; /* Ajustado ya que eliminamos el overlay intermedio */
+    z-index: 2; /* Por encima del video */
     max-width: 800px;
     padding: var(--spacing-3xl) 0;
+    padding-left: 40px; /* Agregar espaciado específico a la izquierda */
+    margin-left: 0; /* Alineación a la izquierda */
+    margin-right: auto;
 }
 
-/* Efecto de brillo para los textos para maximizar contraste */
-.hero-title, .hero-subtitle {
-    filter: brightness(1.05); /* Hace el texto ligeramente más brillante */
+/* Contenedor con efecto blur para el texto - estilo más similar a la imagen */
+.hero-text-overlay {
+    position: relative;
+    padding: 2.5rem;
+    background: rgba(175, 185, 205, 0.3); /* Color grisáceo azulado similar a la imagen */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    animation: fadeInBlur 1.2s ease forwards;
+    max-width: 650px;
 }
 
-.hero-title {
-    font-size: var(--font-size-5xl);
-    color: var(--color-white);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.2;
-    font-weight: 700;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+/* Ajustes de posición para el container */
+.hero .container {
+    padding-left: 0; /* Eliminar padding izquierdo para alinear más a la izquierda */
 }
 
-.hero-subtitle {
-    font-size: var(--font-size-xl);
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--spacing-xl);
-    line-height: 1.5;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-}
-
+/* Ajustar botones para que se vean más como en la imagen */
 .hero-cta {
     display: flex;
     gap: var(--spacing-md);
+    margin-top: 2rem;
 }
 
-/* Mejorar botones con efectos */
 .hero-cta .btn {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    letter-spacing: 0.5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    z-index: 1; /* Asegura que los botones estén por encima */
+    overflow: hidden;
+    z-index: 1;
 }
 
-.hero-cta .btn:hover {
+.hero-cta .btn-white {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: none;
+}
+
+.hero-cta .btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.hero-cta .btn-white:hover {
+    background-color: transparent;
+    color: var(--color-white);
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-cta .btn-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de brillo al pasar el cursor */
+.hero-cta .btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: transform 0.6s ease;
+    z-index: -1;
+}
+
+.hero-cta .btn:hover::after {
+    transform: translateX(200%);
+}
+
+/* Ajustes adicionales de tipografía */
+.hero-title {
+    font-size: 3.2rem; /* Más grande, similar a la imagen */
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    color: var(--color-white);
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem; /* Más pequeño, similar a la imagen */
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInBlur {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        backdrop-filter: blur(0);
+        -webkit-backdrop-filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
 }
 
 /* Services Section */
@@ -285,7 +371,26 @@
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+    .hero-content {
+        padding-left: 60px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+}
+
 @media (max-width: 991px) {
+    .hero-content {
+        padding-left: 40px;
+        max-width: 650px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
     .about-content {
         flex-direction: column;
     }
@@ -323,17 +428,23 @@
         width: 100%;
         text-align: center;
     }
-    
-    .hero-title {
-        font-size: var(--font-size-3xl);
-    }
-    
-    .hero-subtitle {
-        font-size: var(--font-size-lg);
-    }
 }
 
 @media (max-width: 767px) {
+    .hero-content {
+        padding: var(--spacing-xl) var(--spacing-md);
+        max-width: 100%;
+    }
+    
+    .hero-text-overlay {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
     .services-grid,
     .projects-grid {
         grid-template-columns: 1fr;
@@ -342,5 +453,24 @@
     
     .form-group {
         flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-cta .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .hero-text-overlay {
+        padding: 1.25rem;
     }
 }

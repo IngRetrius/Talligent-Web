@@ -6,6 +6,14 @@
     <title>Taligent - Soluciones de Software Innovadoras</title>
     <meta name="description" content="Taligent desarrolla soluciones tecnológicas innovadoras que transforman la gestión de procesos a través del software.">
     <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Precargar video para mejor rendimiento -->
+    <link rel="preload" href="assets/images/hero-bg.mp4" as="video" type="video/mp4">
+    <!-- Metadatos para redes sociales -->
+    <meta property="og:title" content="Taligent - Soluciones de Software Innovadoras">
+    <meta property="og:description" content="Transformamos procesos con soluciones tecnológicas innovadoras que optimizan operaciones y mejoran la experiencia del usuario.">
+    <meta property="og:image" content="assets/images/taligent-social.jpg">
+    <meta property="og:url" content="https://taligent.com.co">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/components/header.css">
@@ -40,7 +48,7 @@
                         <li class="nav-item"><a href="portfolio.html" class="nav-link">Portafolio</a></li>
                         <li class="nav-item"><a href="#contact" class="nav-link contact-btn">Contáctenos</a></li>
                     </ul>
-                    <div class="mobile-menu-toggle">
+                    <div class="mobile-menu-toggle" aria-label="Menú" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -50,24 +58,30 @@
         </div>
     </header>
 
-    <!-- Hero Section con Video de Fondo -->
+    <!-- Hero Section con Video de Fondo y Efecto Blur (alineado a la izquierda) -->
     <section class="hero" id="hero">
         <!-- Video de fondo con filtro integrado -->
         <div class="hero-video-container">
-            <video autoplay muted playsinline class="filtered-video">
+            <video autoplay muted loop playsinline id="heroVideo" class="filtered-video">
                 <source src="assets/images/hero-bg.mp4" type="video/mp4">
+                <!-- Formato alternativo para mayor compatibilidad -->
+                <source src="assets/images/hero-bg.webm" type="video/webm">
+                <!-- Mensaje para navegadores sin soporte de video -->
                 Tu navegador no soporta la etiqueta de video.
             </video>
         </div>
         
-        <!-- Contenido del Hero (sin overlay intermedio) -->
+        <!-- Contenido del Hero con fondo difuminado alineado a la izquierda -->
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Transformamos procesos con soluciones tecnológicas innovadoras</h1>
-                <p class="hero-subtitle">Potenciamos tu negocio con software a medida que optimiza operaciones, garantiza seguridad y mejora la experiencia del usuario final</p>
-                <div class="hero-cta">
-                    <a href="#services" class="btn btn-primary">Nuestros Servicios</a>
-                    <a href="portfolio.html" class="btn btn-secondary">Ver Portafolio</a>
+                <!-- Contenedor con efecto blur para el texto -->
+                <div class="hero-text-overlay">
+                    <h1 class="hero-title">Transformamos procesos con soluciones tecnológicas innovadoras</h1>
+                    <p class="hero-subtitle">Potenciamos tu negocio con software a medida que optimiza operaciones, garantiza seguridad y mejora la experiencia del usuario final</p>
+                    <div class="hero-cta">
+                        <a href="#services" class="btn btn-white">NUESTROS SERVICIOS</a>
+                        <a href="portfolio.html" class="btn btn-outline">VER PORTAFOLIO</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,37 +232,42 @@
                 <a href="portfolio.html" class="view-all">Ver todos los proyectos <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="projects-grid">
+                <!-- HealthQueue Project -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/projects/turnlab.jpg" alt="Proyecto TURNLAB">
+                        <img src="assets/images/projects/healthqueue.png" alt="HealthQueue - Sistema de Gestión de Citas Médicas">
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">TURNLAB</h3>
-                        <p class="project-category">Sistema de Gestión</p>
-                        <p class="project-description">Sistema de asignación de turnos para laboratorio clínico que optimiza la agenda del personal y mejora la experiencia del usuario.</p>
-                        <a href="portfolio.html#turnlab" class="project-link">Ver Detalles</a>
+                        <h3 class="project-title">HealthQueue</h3>
+                        <p class="project-category">Sistema de Gestión de Citas Médicas</p>
+                        <p class="project-short-desc">Plataforma digital que optimiza la gestión de citas médicas y reduce los tiempos de espera en centros de salud.</p>
+                        <a href="portfolio.html#healthqueue" class="btn-view-details">Ver Detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                
+                <!-- PatientFlow Project -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/projects/fintech.jpg" alt="Proyecto FinTech">
+                        <img src="assets/images/projects/patientflow.png" alt="PatientFlow - Optimización de Flujo de Pacientes">
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">DealCloud</h3>
-                        <p class="project-category">Fintech</p>
-                        <p class="project-description">Plataforma para gestión de transacciones financieras seguras con análisis predictivo y dashboard interactivo.</p>
-                        <a href="portfolio.html#dealcloud" class="project-link">Ver Detalles</a>
+                        <h3 class="project-title">PatientFlow</h3>
+                        <p class="project-category">Sistema de Optimización de Flujo de Pacientes</p>
+                        <p class="project-short-desc">Solución integral para gestionar y optimizar el recorrido de pacientes en instituciones de salud, reduciendo tiempos de espera.</p>
+                        <a href="portfolio.html#patientflow" class="btn-view-details">Ver Detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                
+                <!-- LabTrack Project -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/projects/healthtech.jpg" alt="Proyecto HealthTech">
+                        <img src="assets/images/projects/labtrack.png" alt="LabTrack - Sistema de Seguimiento de Muestras">
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">ThirtyMadison</h3>
-                        <p class="project-category">HealthTech</p>
-                        <p class="project-description">Solución integral para la gestión de cuidado médico personalizado con monitoreo remoto de pacientes.</p>
-                        <a href="portfolio.html#thirtymadison" class="project-link">Ver Detalles</a>
+                        <h3 class="project-title">LabTrack</h3>
+                        <p class="project-category">Sistema de Seguimiento de Muestras para Laboratorios</p>
+                        <p class="project-short-desc">Solución integral para la trazabilidad y gestión del ciclo completo de procesamiento de muestras en laboratorios clínicos.</p>
+                        <a href="portfolio.html#labtrack" class="btn-view-details">Ver Detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -277,10 +296,10 @@
                         </div>
                     </div>
                     <div class="social-media">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="contact-form-container">
@@ -361,19 +380,19 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">&copy; 2025 Taligent S.A.S. Todos los derechos reservados.</p>
+                <p class="copyright">&copy; <span class="copyright-year">2025</span> Taligent S.A.S. Todos los derechos reservados.</p>
                 <div class="footer-social">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#header" class="back-to-top" id="backToTop">
+    <a href="#header" class="back-to-top" id="backToTop" aria-label="Volver arriba">
         <i class="fas fa-arrow-up"></i>
     </a>
 
