@@ -1,8 +1,8 @@
-// Archivo: js/main.js (COMPLETO)
+// Archivo: js/main.js (MODIFICADO)
 /**
  * Main JavaScript file for Taligent website
  * Initializes all modules and components
- * Version: 2.0
+ * Version: 2.1
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize page-specific modules
     if (document.querySelector('.portfolio-filter')) {
         initPortfolio();
+    }
+    
+    // Inicializar módulo de licitación si estamos en esa página
+    if (document.querySelector('.licitacion-hero')) {
+        initLicitacion();
     }
     
     // Initialize animations
@@ -105,7 +110,9 @@ function initAnimations() {
     const staggerContainers = [
         { selector: '.services-grid', childSelector: '.service-card' },
         { selector: '.projects-grid', childSelector: '.project-card' },
-        { selector: '.methodology-steps', childSelector: '.step' }
+        { selector: '.methodology-steps', childSelector: '.step' },
+        { selector: '.destacados-grid', childSelector: '.destacado-card' }, // Añadido para destacados
+        { selector: '.equipo-grid', childSelector: '.equipo-card' } // Añadido para equipo
     ];
     
     staggerContainers.forEach(container => {
@@ -130,7 +137,7 @@ function initAnimations() {
     });
     
     // Parallax effects for header backgrounds
-    const parallaxBgs = document.querySelectorAll('.hero, .portfolio-hero, .portfolio-cta');
+    const parallaxBgs = document.querySelectorAll('.hero, .portfolio-hero, .portfolio-cta, .licitacion-hero, .licitacion-cta');
     
     if (parallaxBgs.length) {
         window.addEventListener('scroll', () => {
@@ -190,7 +197,6 @@ function debounce(func, delay) {
 function initHeroVideo() {
     const video = document.getElementById('heroVideo');
     if (!video) {
-        console.warn('Elemento de video no encontrado con ID "heroVideo"');
         return;
     }
     
