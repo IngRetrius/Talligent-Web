@@ -94,11 +94,6 @@
     margin-top: var(--spacing-xl);
 }
 
-.canva-container:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-xl);
-}
-
 .canva-placeholder {
     width: 100%;
     height: 500px;
